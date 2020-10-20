@@ -1,0 +1,82 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
+    ></script>
+  </head>
+  <body>
+    <script>
+	  function isFacebookApp() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    return (ua.indexOf('Instagram') > -1);
+}
+		  if(isFacebookApp()) {
+			  alert("Для просмотра AR откройте страницу в Safari")
+		  }
+		     
+</script>
+    <div>
+      <style>
+        model-viewer {
+          width: 100%;
+          height: 90%;
+
+        }
+        
+        .pos {
+          display: flex;
+            justify-content: center;
+
+            font-weight: 600;
+            font-size: 24;
+            color: #A00A0A;
+            top: 10%;
+          
+        }
+        
+        .lol {
+           display: flex;
+          margin: 1em;
+           justify-content: center;
+          
+        }
+        
+        img {
+          width: 24%;
+          top: 1%;
+          height: 6%;
+        }
+        button {
+          position: absolute;
+          background-color: black;
+          border-radius: 12px;
+          font-size: 18;
+          border: none;
+          bottom: 5%;
+          left:15%;
+          align-items: center;
+          font-weight: 800;
+          color: white;
+          padding: 1em;
+          justify-content: center;
+        }
+      </style>
+      <div class="lol">
+        <img src="glb/logo.svg">
+      </div>
+      
+      <model-viewer position="0 0 0" src="glb/tumba.glb" ar ar-modes="webxr scene-viewer quick-look fallback"
+      ar-scale="auto" auto-rotate camera-controls alt="model" ios-src="glb/tumba.usdz">
+        <button
+          slot="ar-button">
+          ОТКРЫТЬ ПРОСМОТР AR
+      </button>
+        </model-viewer>
+    </div>
+  </body>
+</html>
